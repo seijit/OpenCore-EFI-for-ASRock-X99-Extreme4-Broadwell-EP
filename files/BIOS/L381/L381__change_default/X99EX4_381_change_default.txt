@@ -1,0 +1,46 @@
+[Changed default settings]
+
+IntelRCSetup -> Processor Configuration -> MSR Lock Control -> (Optimal)Enabled -> Disabled
+
+USB Configuration -> EHCI Hand-off -> (Optimal)Disabled -> Enabled
+
+NCT6791D Super IO Configuration -> Serial Port -> (Optimal)Enabled -> Disabled
+
+
+
+[Not changed default settings]
+
+PCI Subsystem Settings -> PCI Hot-Plug Settings BIOS Hot-Plug Support -> (Optimal)Enabled
+
+IntelRCSetup -> Processor Configuration -> Execute Disable Bit -> (Optimal)Enabled
+
+Common RefCode Configuration -> MMCFG Base -> (Optimal)2G
+
+Common RefCode Configuration -> MMIOHBase -> (Failsafe)56T
+
+Common RefCode Configuration -> MMIOHBase -> (Optimal)1T
+
+Common RefCode Configuration -> MMIO High Size -> (Optimal)256G
+
+ACPI Configuration -> Enable Hibernation (Optimal)Enabled
+
+ACPI Configuration -> Enable ACPI Auto Configuration -> Disabled
+
+PCH Configuration -> PCH Devices -> GP27 Wake From DeepSx -> (Optimal)Disabled
+
+
+
+
+[Stutters or other issues on HEDT system after enabling 4G decoding]
+
+This can happen when the allocated BAR address of the GPU is higher than recommended. 
+Set MMIOH Base to 256GB or the closest value above that you system supports (eg 1TB), you can try higher if you need to due to installed RAM amount. 
+This can also fix boot issues with macOS.
+
+
+[System won't boot with large VRAM (>16GB) or multi-GPU]
+
+On HEDT such as X99 increase MMIOH Size, this is found in IntelRCSetup if your BIOS doesn't expose the menu. 
+On Ivy Bridge or Haswell you can try using less than 30GB of RAM, this should allow 16GB BAR to function. 
+On Skylake with >32GB BAR you need to manually patch the BIOS AddMemorySpace call using a disassembler (only do if you know about this stuff)
+ because there is currently no patch for it.
