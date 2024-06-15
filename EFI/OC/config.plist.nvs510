@@ -1201,9 +1201,6 @@
                 <key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
                 <array>
                     <string>rtc-blacklist</string>
-                    <string>opencore-version</string>
-                    <string>revcpu</string>
-                    <string>revcpuname</string>
                     <string>revpatch</string>
                     <string>revblock</string>
                 </array>
