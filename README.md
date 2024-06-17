@@ -69,7 +69,7 @@ Also, setting `Suspend to RAM = Disabled` can help prevent the 'Disk Not Ejected
 		​
 			VT-d = Disabled
 
-			Above 4G Decoding = Enabled  (if NVS 510, Disabled)
+			Above 4G Decoding = Enabled
 			SR-IOV Support = Disabled
 
 			PCIE1 Link Speed = Gen3  (if NVS 510, Auto)
@@ -114,7 +114,9 @@ Also, setting `Suspend to RAM = Disabled` can help prevent the 'Disk Not Ejected
 
 		Boot:
 		​
-			CSM (Compatibility Support Module) = Disabled  (if NVS 510, Enabled)
+			Setup Prompt Timeout = 1  (if NVS 510, 12)
+
+			CSM (Compatibility Support Module) = Disabled
 
 
 
