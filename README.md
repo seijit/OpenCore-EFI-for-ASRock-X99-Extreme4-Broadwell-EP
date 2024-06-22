@@ -66,8 +66,8 @@ Also, setting `Suspend to RAM = Disabled` can help prevent the 'Disk Not Ejected
 				Enhanced Halt State(C1E) = Auto
 
 		Advanced -- Chipset Configuration:
-		​
-			VT-d = Disabled
+
+  			VT-d = Disabled
 
 			Above 4G Decoding = Enabled
 			SR-IOV Support = Disabled
@@ -86,10 +86,10 @@ Also, setting `Suspend to RAM = Disabled` can help prevent the 'Disk Not Ejected
 			Good Night LED = Disabled
 
 		Advanced -- Super IO Configuration:
-		​
-			Serial Port = Disabled
-		​
-		Advanced -- ACPI Configuration:
+
+  			Serial Port = Disabled
+
+  		Advanced -- ACPI Configuration:
 
 			Suspend to RAM = Auto  (see known issue workaround)
 
@@ -112,9 +112,13 @@ Also, setting `Suspend to RAM = Disabled` can help prevent the 'Disk Not Ejected
 
 			Security Device Support = Disabled​
 
+		Security:
+
+			Secure Boot = Disabled
+
 		Boot:
-		​
-			Setup Prompt Timeout = 1  (if NVS 510, 12)
+
+  			Setup Prompt Timeout = 1  (if NVS 510, 12)
 
 			CSM (Compatibility Support Module) = Disabled
 
